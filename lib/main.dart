@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reformation/ui/home_page.dart';
-import 'package:reformation/ui/places_page.dart';
 import 'package:reformation/ui/people_page.dart';
+import 'package:reformation/ui/places_page.dart';
 import 'package:reformation/ui/sources_page.dart';
 import 'package:reformation/ui/timeline_page.dart';
 
@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: HomePage(),
       routes: {
-        '/Home': (context) => MyHomePage(),
+        '/Home': (context) => HomePage(),
         '/People': (context) => PeoplePage(),
         '/Places': (context) => PlacesPage(),
         '/Timeline': (context) => TimelinePage(),

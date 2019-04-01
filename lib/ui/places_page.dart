@@ -28,10 +28,10 @@ class PlacesPage extends StatelessWidget {
                 layers: [
                   new TileLayerOptions(
                       urlTemplate:
-                      "https://api.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?style=mapbox://styles/dp68/cjsbwdmgg1gnz1fquorvwwr7o@00&access_token={accessToken}",
+                          "https://api.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?style=mapbox://styles/dp68/cjsbwdmgg1gnz1fquorvwwr7o@00&access_token={accessToken}",
                       additionalOptions: {
                         'accessToken':
-                        'pk.eyJ1IjoiZHA2OCIsImEiOiJjanM0aTRhdzQwNHQ1M3lsZGllcnhiZGZ2In0.UyG0-n898ZL2m6sPducIrA',
+                            'pk.eyJ1IjoiZHA2OCIsImEiOiJjanM0aTRhdzQwNHQ1M3lsZGllcnhiZGZ2In0.UyG0-n898ZL2m6sPducIrA',
                         'id': 'mapbox.streets'
                         //'mapbox.mapbox-streets-v8,dp68.cjskc5fgt1l332yqzp4tc4a0h-7lc1w',
                       }),
@@ -49,14 +49,14 @@ class PlacesPage extends StatelessWidget {
     var markers = places
         .map(
           (place) => Marker(
-          point: LatLng(place.lat, place.lon),
-          builder: (ctx) => GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(PlaceOverlay(place));
-            },
-            child: Container(child: new FlutterLogo()),
-          )),
-    )
+              point: LatLng(place.lat, place.lon),
+              builder: (ctx) => GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(PlaceOverlay(place));
+                    },
+                    child: Container(child: new FlutterLogo()),
+                  )),
+        )
         .toList();
     return markers;
   }
@@ -87,10 +87,10 @@ class PlaceOverlay extends ModalRoute<void> {
 
   @override
   Widget buildPage(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      ) {
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+  ) {
     // This makes sure that text and other content follows the material style
     return Material(
       type: MaterialType.transparency,
@@ -102,66 +102,12 @@ class PlaceOverlay extends ModalRoute<void> {
   }
 
   Widget _buildOverlayContent(BuildContext context) {
-    return Center(
-        child: SingleChildScrollView(
-          child: Container(
-            margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(8.0),
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 10.0,
-                  offset: Offset(0.0, 10.0),
-                ),
-              ],
-            ),
-            child: Column(
-              children: <Widget>[
-                Text(
-                  place.name,
-                  style: Style.headerTextStyle,
-                ),
-                Container(
-                  height: 400.0,
-                  width: 400.0,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage(place.image))),
-                ),
-                Text(
-                  place.text,
-                  style: Style.baseTextStyle,
-                ),
-                RaisedButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text('Dismiss'),
-                )
-              ],
-            ),
-          ),
-        ));
-//            Center(child: Text(title, style: Style.headerTextStyleWhite)))
-//      child: Column(
-//        mainAxisSize: MainAxisSize.min,
-//        children: <Widget>[
-//
-////          Text(
-////            'This is a nice overlay',
-////            style: TextStyle(color: Colors.white, fontSize: 30.0),
-////          ),
-////          RaisedButton(
-////            onPressed: () => Navigator.pop(context),
-////            child: Text('Dismiss'),
-////          )
-//        ],
-//      ),
+    return PlaceContent(place);
   }
 
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,
-                          Animation<double> secondaryAnimation, Widget child) {
+      Animation<double> secondaryAnimation, Widget child) {
     // You can add your own animations for the overlay content
     return FadeTransition(
       opacity: animation,
@@ -170,5 +116,55 @@ class PlaceOverlay extends ModalRoute<void> {
         child: child,
       ),
     );
+  }
+}
+
+class PlaceContent extends StatelessWidget {
+  final Place _place;
+
+  const PlaceContent(this._place);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: SingleChildScrollView(
+      child: Container(
+        margin: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(8.0),
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 10.0,
+              offset: Offset(0.0, 10.0),
+            ),
+          ],
+        ),
+        child: Column(
+          children: <Widget>[
+            Text(
+              _place.name,
+              style: Style.headerTextStyle,
+            ),
+            Container(
+              height: 400.0,
+              width: 400.0,
+              decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage(_place.image))),
+            ),
+            Text(
+              _place.text,
+              style: Style.baseTextStyle,
+            ),
+            RaisedButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('Dismiss'),
+            )
+          ],
+        ),
+      ),
+    ));
   }
 }

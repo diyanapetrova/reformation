@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reformation/common/drawer.dart';
 
 class SourcesPage extends StatelessWidget {
   final String title = 'Sources';

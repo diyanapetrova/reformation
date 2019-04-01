@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/common/drawer.dart';
 import 'package:reformation/common/text_style.dart';
+import 'package:reformation/ui/search.dart';
 
-class MyHomePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   final String title = 'Home';
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-          backgroundColor: Color(0xFF00539B),
-        ),
+        appBar: SearchBar(title),
 //        drawer: MyDrawer(),
         body: HomeGrid());
   }
+//    return HomeGrid();
 }
 
 class HomeGrid extends StatelessWidget {

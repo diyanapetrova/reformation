@@ -16,6 +16,4 @@ class Palette {
   static final green = Color(0xFF54b948);
   static final mildGreen = Color(0xFF00853f);
   static final darkGreen = Color(0xFF005953);
-
 }
-

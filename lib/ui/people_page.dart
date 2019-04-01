@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reformation/common/card.dart';
 import 'package:reformation/model/person.dart';
-import 'package:reformation/common/drawer.dart';
 
 class PeoplePage extends StatelessWidget {
   final String title = 'People';

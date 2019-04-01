@@ -1,11 +1,11 @@
-class Person {
-  final String id;
-  final String name;
+import 'package:reformation/model/resource.dart';
+
+class Person extends Resource {
   final String period;
   final String image;
   final String description;
 
-  const Person(this.id, this.name, this.period, this.image, this.description);
+  const Person(name, this.period, this.image, this.description) : super(name);
 }
 
 const description =
@@ -13,5 +13,5 @@ const description =
 
 List<Person> people = [
   const Person(
-      '2', 'John Knox', '(c. 1555–1623)', 'images/john_knox.jpg', description),
+      'John Knox', '(c. 1555–1623)', 'images/john_knox.jpg', description),
 ];
