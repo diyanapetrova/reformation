@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
 import 'package:reformation/common/text_style.dart';
+import 'package:reformation/data/places.dart';
 import 'package:reformation/model/place.dart';
 
 class PlacesPage extends StatelessWidget {
@@ -54,7 +55,23 @@ class PlacesPage extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(PlaceOverlay(place));
                     },
-                    child: Container(child: new FlutterLogo()),
+                    child: Container(
+                      height: 30.0,
+                      width: 30.0,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: Container(
+                        margin: EdgeInsets.all(5.0),
+                        height: 25.0,
+                        width: 25.0,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.cover, image: AssetImage(place.icon)),
+                        ),
+                      ),
+                    ),
                   )),
         )
         .toList();
@@ -143,28 +160,42 @@ class PlaceContent extends StatelessWidget {
           ],
         ),
         child: Column(
-          children: <Widget>[
-            Text(
-              _place.name,
-              style: Style.headerTextStyle,
-            ),
-            Container(
-              height: 400.0,
-              width: 400.0,
-              decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage(_place.image))),
-            ),
-            Text(
-              _place.text,
-              style: Style.baseTextStyle,
-            ),
-            RaisedButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('Dismiss'),
-            )
-          ],
+          children: place_details(context),
         ),
       ),
     ));
+  }
+
+  List<Widget> place_details(BuildContext context) {
+    List<Widget> list = new List();
+    list.add(Text(
+      _place.name,
+      style: Style.headerTextStyle,
+    ));
+
+    list.add(Container(
+      height: 400.0,
+      width: 400.0,
+      decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage(_place.image))),
+    ));
+
+    _place.text.forEach((paragraph) {
+      list.add(Text(
+        paragraph,
+        style: Style.baseTextStyle,
+      ));
+      list.add(Divider(
+        color: Colors.white,
+        height: 3,
+      ));
+    });
+
+    list.add(RaisedButton(
+      onPressed: () => Navigator.pop(context),
+      child: Text('Dismiss'),
+    ));
+
+    return list;
   }
 }

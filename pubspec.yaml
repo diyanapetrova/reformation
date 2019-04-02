@@ -16,6 +16,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_map: any # or the latest version on Pub
+  json_annotation: ^2.0.0
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -25,7 +27,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  json_serializable: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
@@ -40,9 +42,21 @@ flutter:
 #
 #   To add assets to your application, add an assets section, like this:
   assets:
-    - images/john_knox.jpg
-    - images/sword.png
-    - images/castle.jpg
+    - images/icons/administration.png
+    - images/icons/archbishop.png
+    - images/icons/death.png
+    - images/icons/education.png
+    - images/icons/preaching.png
+    - images/icons/publication.png
+    - images/icons/royal.png
+    - images/icons/war.png
+    - images/icons/place.png
+    - images/places/castle.jpg
+    - images/places/cathedral.jpg
+    - images/places/deans_cort.jpg
+    - images/places/holy_trinity.jpg
+    - images/people/john_knox.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

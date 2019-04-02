@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/common/text_style.dart';
+import 'package:reformation/data/events.dart';
 import 'package:reformation/model/event.dart';
 
 class TimelinePage extends StatelessWidget {

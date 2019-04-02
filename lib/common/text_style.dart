@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:reformation/common/color_sheme.dart';
 
 class Style {
-  static final baseTextStyle = TextStyle(fontFamily: 'PT Sans', fontSize: 14);
+  static final baseTextStyle = TextStyle(fontFamily: 'PT Sans', fontSize: 16);
 
   static final baseTextStyleWhite = baseTextStyle.copyWith(color: Colors.white);
 
