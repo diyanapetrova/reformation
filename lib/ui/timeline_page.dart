@@ -12,7 +12,7 @@ class TimelinePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Palette.blue,
+        backgroundColor: Palette.burgundy,
       ),
 //      drawer: MyDrawer(),
 //    backgroundColor: Palette.lightBlue,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reformation/common/card.dart';
+import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/data/people.dart';
 
 class PeoplePage extends StatelessWidget {
@@ -10,7 +11,7 @@ class PeoplePage extends StatelessWidget {
     return new Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Color(0xFF00539B),
+        backgroundColor: Palette.purple,
       ),
 //      drawer: MyDrawer(),
       body: new Column(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
+import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/common/text_style.dart';
+import 'package:reformation/common/ui.dart';
 import 'package:reformation/data/places.dart';
 import 'package:reformation/model/place.dart';
 
@@ -168,34 +170,65 @@ class PlaceContent extends StatelessWidget {
 
   List<Widget> place_details(BuildContext context) {
     List<Widget> list = new List();
-    list.add(Text(
-      _place.name,
-      style: Style.headerTextStyle,
+    list.add(Container(
+      child: Text(
+        _place.name,
+        style: Style.headerTextStyle,
+      ),
+      margin: const EdgeInsets.only(top: 30, bottom: 20),
+    ));
+
+    list.add(
+      Container(
+        height: 400.0,
+        width: 400.0,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(_place.image), fit: BoxFit.cover)),
+        margin: EdgeInsets.only(left: 20, right: 20, bottom: 15),
+      ),
+    );
+
+    list.addAll(CustomText.transform(_place.text));
+
+    list.add(new Wrap(
+      spacing: 6.0, // gap between adjacent chips
+      runSpacing: 4.0, // gap between lines
+      children: <Widget>[
+        new Chip(
+          label:
+              new Text('St Andrews Cathedral', style: Style.baseTextStyleWhite),
+          backgroundColor: Palette.green,
+        ),
+        new Chip(
+          label: new Text('George Wishart', style: Style.baseTextStyleWhite),
+          backgroundColor: Palette.purple,
+        ),
+        new Chip(
+          label: new Text('Cardinal David Beaton',
+              style: Style.baseTextStyleWhite),
+          backgroundColor: Palette.purple,
+        ),
+        new Chip(
+          label: new Text(
+            'Archbishop John Hamilton',
+            style: Style.baseTextStyleWhite,
+          ),
+          backgroundColor: Palette.purple,
+        ),
+      ],
     ));
 
     list.add(Container(
-      height: 400.0,
-      width: 400.0,
-      decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(_place.image))),
-    ));
-
-    _place.text.forEach((paragraph) {
-      list.add(Text(
-        paragraph,
-        style: Style.baseTextStyle,
-      ));
-      list.add(Divider(
-        color: Colors.white,
-        height: 3,
-      ));
-    });
-
-    list.add(RaisedButton(
-      onPressed: () => Navigator.pop(context),
-      child: Text('Dismiss'),
+      child: RaisedButton(
+        onPressed: () => Navigator.pop(context),
+        child: Text('Dismiss'),
+      ),
+      margin: EdgeInsets.all(10),
     ));
 
     return list;
   }
 }
+
+

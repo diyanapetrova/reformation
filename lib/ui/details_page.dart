@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reformation/common/card.dart';
-import 'package:reformation/common/text_style.dart';
+import 'package:reformation/common/ui.dart';
 import 'package:reformation/model/person.dart';
 import 'package:reformation/model/place.dart';
 import 'package:reformation/model/resource.dart';
@@ -23,17 +23,21 @@ class DetailsPage extends StatelessWidget {
 
   Widget _personDetails(Person person) {
     return Column(
-      children: <Widget>[
-        PersonSummary(
-          person,
-          false,
-        ),
-        Container(
-          margin: EdgeInsets.all(20),
-          child: Text(person.description, style: Style.baseTextStyle),
-        )
-      ],
+      children: _personContent(person),
     );
+  }
+
+  List<Widget> _personContent(Person person) {
+    List<Widget> list = new List();
+    list.add(
+      PersonSummary(
+        person,
+        false,
+      ),
+    );
+    list.addAll(CustomText.transform(person.text));
+
+    return list;
   }
 
   Widget _placeDetails(Place place) {

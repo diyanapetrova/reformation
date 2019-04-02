@@ -89,7 +89,7 @@ class PersonSummary extends StatelessWidget {
               style: Style.headerTextStyle,
             ),
             Container(height: 10.0),
-            Text(person.period, style: Style.subHeaderTextStyle),
+            Text(person.summary, style: Style.subHeaderTextStyle),
           ],
         ));
   }

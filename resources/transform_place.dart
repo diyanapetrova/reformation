@@ -3,20 +3,22 @@ import 'dart:convert';
 import 'dart:io';
 
 main() {
-  final file = new File('resources/places.txt');
-  var output = new File('places.dart');
-//  var sink = output.openWrite();
-//  sink.write(writeIntro());
+//  final file = new File('resources/places.txt');
+//  var output = new File('places.dart');
+////  var sink = output.openWrite();
+////  sink.write(writeIntro());
+//
+////  Stream<List<int>> inputStream = file.openRead();
+//
+//  String mapAsJson = '{"language":"dart"}';  // input Map of data
+//  Map parsedMap = json.decode(mapAsJson);
+//  print(parsedMap["language"]);
+//
+//
+//  // Close the IOSink to free system resources.
+////  sink.close();
 
-//  Stream<List<int>> inputStream = file.openRead();
 
-  String mapAsJson = '{"language":"dart"}';  // input Map of data
-  Map parsedMap = json.decode(mapAsJson);
-  print(parsedMap["language"]);
-
-
-  // Close the IOSink to free system resources.
-//  sink.close();
 }
 
 String writeIntro(){

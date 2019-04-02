@@ -5,9 +5,9 @@ part 'person.g.dart';
 
 @JsonSerializable(nullable: false)
 class Person extends Resource {
-  final String period;
   final String image;
-  final String description;
+  final List<String> text;
+  final String summary;
 
-  Person(name, this.period, this.image, this.description) : super(name);
+  Person(name, this.image, this.text, this.summary) : super(name);
 }
