@@ -10,4 +10,6 @@ class Person extends Resource {
   final String summary;
 
   Person(name, this.image, this.text, this.summary) : super(name);
+  factory Person.fromJson(Map<String, dynamic> json) =>
+      _$PersonFromJson(json);
 }

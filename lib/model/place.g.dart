@@ -1,16 +1,22 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
 part of 'place.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
 
 Place _$PlaceFromJson(Map<String, dynamic> json) {
   return Place(
-      json['name'] as String,
-      json['lat'] as double,
-      json['lon'] as double,
+      json['name'],
+      (json['lat'] as num).toDouble(),
+      (json['lon'] as num).toDouble(),
       json['image'] as String,
       json['icon'] as String,
-      json['text'] as List);
+      (json['text'] as List).map((e) => e as String).toList());
 }
 
-Map<String, dynamic> _$PersonToJson(Place instance) => <String, dynamic>{
+Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
       'name': instance.name,
       'lat': instance.lat,
       'lon': instance.lon,

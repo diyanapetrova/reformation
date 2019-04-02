@@ -13,4 +13,6 @@ class Place extends Resource {
 
   const Place(name, this.lat, this.lon, this.image, this.icon, this.text)
       : super(name);
+
+  factory Place.fromJson(Map<String, dynamic> json) => _$PlaceFromJson(json);
 }

@@ -10,4 +10,6 @@ class Source extends Resource {
   final String source;
 
   Source(name, this.introduction, this.source, this.text) : super(name);
+
+  factory Source.fromJson(Map<String, dynamic> json) => _$SourceFromJson(json);
 }
