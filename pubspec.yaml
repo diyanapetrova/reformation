@@ -58,6 +58,9 @@ flutter:
     - images/places/holy_trinity.jpg
     - images/people/john_knox.jpg
     - resources/people.json
+    - resources/places.json
+    - resources/sources.json
+    - images/people/no_photo.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

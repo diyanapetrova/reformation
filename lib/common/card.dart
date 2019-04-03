@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/common/text_style.dart';
 import 'package:reformation/model/person.dart';
 import 'package:reformation/ui/details_page.dart';
@@ -21,16 +22,17 @@ class PersonSummary extends StatelessWidget {
               }
             : null,
         child: Container(
-            margin: const EdgeInsets.symmetric(
-              vertical: 16.0,
-              horizontal: 24.0,
-            ),
-            child: Stack(
-              children: <Widget>[
-                _card(),
-                _image(),
-              ],
-            )));
+          margin: const EdgeInsets.symmetric(
+            vertical: 16.0,
+            horizontal: 24.0,
+          ),
+          child: Stack(
+            children: <Widget>[
+              _card(),
+              _image(),
+            ],
+          ),
+        ));
   }
 
   Widget _image() {
@@ -41,6 +43,7 @@ class PersonSummary extends StatelessWidget {
       alignment:
           horizontal ? FractionalOffset.centerLeft : FractionalOffset.center,
       decoration: BoxDecoration(
+          color: Palette.purple,
           shape: BoxShape.circle,
           image: DecorationImage(
             fit: BoxFit.cover,
@@ -58,7 +61,7 @@ class PersonSummary extends StatelessWidget {
           ? new EdgeInsets.only(left: 46.0)
           : new EdgeInsets.only(top: 72.0),
       decoration: BoxDecoration(
-        color: Color(0xFFFFFFFF),
+        color: Color(0xFFbda1cc),
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[

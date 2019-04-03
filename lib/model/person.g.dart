@@ -7,16 +7,25 @@ part of 'person.dart';
 // **************************************************************************
 
 Person _$PersonFromJson(Map<String, dynamic> json) {
+  if (json['image'] == null) {
+    return Person(
+        json['name'],
+        (json['text'] as List).map((e) => e as String).toList(),
+        json['summary'] as String,
+        (json['references'] as List).map((e) => e as String).toList());
+  }
   return Person(
       json['name'],
-      json['image'] as String,
       (json['text'] as List).map((e) => e as String).toList(),
-      json['summary'] as String);
+      json['summary'] as String,
+      (json['references'] as List).map((e) => e as String).toList(),
+      image: json['image'] as String);
 }
 
 Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
       'name': instance.name,
       'image': instance.image,
       'text': instance.text,
-      'summary': instance.summary
+      'summary': instance.summary,
+      'references': instance.references
     };

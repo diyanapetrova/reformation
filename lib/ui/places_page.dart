@@ -3,8 +3,8 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
 import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/common/text_style.dart';
-import 'package:reformation/common/ui.dart';
-import 'package:reformation/data/places.dart';
+import 'package:reformation/common/things.dart';
+import 'package:reformation/main.dart';
 import 'package:reformation/model/place.dart';
 
 class PlacesPage extends StatelessWidget {
@@ -13,15 +13,14 @@ class PlacesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: new Text("Places")),
+      appBar: new AppBar(
+        title: new Text("Places"),
+        backgroundColor: Palette.mildGreen,
+      ),
       body: new Padding(
         padding: new EdgeInsets.all(8.0),
         child: new Column(
           children: [
-            new Padding(
-              padding: new EdgeInsets.only(top: 8.0, bottom: 8.0),
-              child: new Text("This is a map that is showing (51.5, -0.9)."),
-            ),
             new Flexible(
               child: new FlutterMap(
                 options: new MapOptions(
@@ -189,35 +188,9 @@ class PlaceContent extends StatelessWidget {
       ),
     );
 
-    list.addAll(CustomText.transform(_place.text));
+    list.addAll(Common.transformParagraphsToText(_place.text, context));
 
-    list.add(new Wrap(
-      spacing: 6.0, // gap between adjacent chips
-      runSpacing: 4.0, // gap between lines
-      children: <Widget>[
-        new Chip(
-          label:
-              new Text('St Andrews Cathedral', style: Style.baseTextStyleWhite),
-          backgroundColor: Palette.green,
-        ),
-        new Chip(
-          label: new Text('George Wishart', style: Style.baseTextStyleWhite),
-          backgroundColor: Palette.purple,
-        ),
-        new Chip(
-          label: new Text('Cardinal David Beaton',
-              style: Style.baseTextStyleWhite),
-          backgroundColor: Palette.purple,
-        ),
-        new Chip(
-          label: new Text(
-            'Archbishop John Hamilton',
-            style: Style.baseTextStyleWhite,
-          ),
-          backgroundColor: Palette.purple,
-        ),
-      ],
-    ));
+    list.add(Common.references(_place.references, context));
 
     list.add(Container(
       child: RaisedButton(
@@ -230,5 +203,3 @@ class PlaceContent extends StatelessWidget {
     return list;
   }
 }
-
-

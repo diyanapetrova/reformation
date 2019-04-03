@@ -13,7 +13,8 @@ Place _$PlaceFromJson(Map<String, dynamic> json) {
       (json['lon'] as num).toDouble(),
       json['image'] as String,
       json['icon'] as String,
-      (json['text'] as List).map((e) => e as String).toList());
+      (json['text'] as List).map((e) => e as String).toList(),
+      (json['references'] as List).map((e) => e as String).toList());
 }
 
 Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
@@ -22,5 +23,6 @@ Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
       'lon': instance.lon,
       'image': instance.image,
       'icon': instance.icon,
-      'text': instance.text
+      'text': instance.text,
+      'references': instance.references
     };

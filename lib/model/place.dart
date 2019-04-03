@@ -10,8 +10,9 @@ class Place extends Resource {
   final String image;
   final String icon;
   final List<String> text;
+  final List<String> references;
 
-  const Place(name, this.lat, this.lon, this.image, this.icon, this.text)
+  const Place(name, this.lat, this.lon, this.image, this.icon, this.text, this.references)
       : super(name);
 
   factory Place.fromJson(Map<String, dynamic> json) => _$PlaceFromJson(json);

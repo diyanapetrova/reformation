@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:reformation/common/color_sheme.dart';
-import 'package:reformation/common/text_style.dart';
 import 'package:reformation/data/events.dart';
 import 'package:reformation/model/event.dart';
 
@@ -37,10 +36,11 @@ class TimelineEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: <Widget>[_box(), _line(), _icon(), _date()]);
+    return Stack(
+        children: <Widget>[_box(context), _line(), _icon(), _date(context)]);
   }
 
-  Widget _date() {
+  Widget _date(BuildContext context) {
     return Positioned(
         top: 30.0,
         left: 15.0,
@@ -48,7 +48,7 @@ class TimelineEvent extends StatelessWidget {
           color: Colors.white,
           child: Text(
             event.date,
-            style: Style.baseTextStyle,
+            style: Theme.of(context).textTheme.body1,
           ),
         ));
   }
@@ -68,11 +68,11 @@ class TimelineEvent extends StatelessWidget {
 
   Widget _icon() {
     return Positioned(
-      top: 40.0,
-      left: 25.0,
+      top: 47.0,
+      left: 22.0,
       child: Container(
-        height: 30.0,
-        width: 30.0,
+        height: 40.0,
+        width: 40.0,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.white,
@@ -91,12 +91,12 @@ class TimelineEvent extends StatelessWidget {
     );
   }
 
-  Widget _box() {
+  Widget _box(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(90, 10, 10, 10),
+      margin: EdgeInsets.fromLTRB(95, 10, 10, 10),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color(0xFFFFFFFF),
+        color: Color(0xFFe285a2),
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[
@@ -110,7 +110,7 @@ class TimelineEvent extends StatelessWidget {
       child: Container(
         child: Text(
           event.description,
-          style: Style.baseTextStyle,
+          style: Theme.of(context).textTheme.body1,
           overflow: TextOverflow.clip,
         ),
       ),

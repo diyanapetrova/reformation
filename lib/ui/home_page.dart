@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/common/drawer.dart';
-import 'package:reformation/common/text_style.dart';
 import 'package:reformation/ui/search.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,7 +23,7 @@ class HomeGrid extends StatelessWidget {
     tiles.remove('Home');
     var colors = {
       "People": Palette.purple,
-      "Places": Palette.green,
+      "Places": Palette.mildGreen,
       "Timeline": Palette.burgundy,
       "Sources": Palette.orange
     };
@@ -57,7 +56,11 @@ class HomeGrid extends StatelessWidget {
                 ),
               ],
             ),
-            child:
-                Center(child: Text(title, style: Style.headerTextStyleWhite))));
+            child: Center(
+                child: Text(title,
+                    style: Theme.of(context)
+                        .textTheme
+                        .title
+                        .apply(color: Colors.white)))));
   }
 }

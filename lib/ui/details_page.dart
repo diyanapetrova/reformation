@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reformation/common/card.dart';
-import 'package:reformation/common/ui.dart';
+import 'package:reformation/common/things.dart';
 import 'package:reformation/model/person.dart';
 import 'package:reformation/model/place.dart';
 import 'package:reformation/model/resource.dart';
@@ -15,19 +15,19 @@ class DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget content;
     if (resource is Person)
-      content = _personDetails(resource);
+      content = _personDetails(resource, context);
     else if (resource is Place) content = _placeDetails(resource);
 
     return Scaffold(body: content);
   }
 
-  Widget _personDetails(Person person) {
+  Widget _personDetails(Person person, BuildContext context) {
     return Column(
-      children: _personContent(person),
+      children: _personContent(person, context),
     );
   }
 
-  List<Widget> _personContent(Person person) {
+  List<Widget> _personContent(Person person, BuildContext context) {
     List<Widget> list = new List();
     list.add(
       PersonSummary(
@@ -35,7 +35,7 @@ class DetailsPage extends StatelessWidget {
         false,
       ),
     );
-    list.addAll(CustomText.transform(person.text));
+    list.addAll(Common.transformParagraphsToText(person.text, context));
 
     return list;
   }
