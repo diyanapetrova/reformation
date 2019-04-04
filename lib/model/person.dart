@@ -9,7 +9,9 @@ class Person extends Resource {
   final List<String> text;
   final List<String> references;
 
-  Person(name, this.text,summary, this.references, {this.image = "images/people/no_photo.png"}) : super(name, summary);
-  factory Person.fromJson(Map<String, dynamic> json) =>
-      _$PersonFromJson(json);
+  Person(name, this.text, summary, this.references,
+      {this.image = "images/people/no_photo.png"})
+      : super(name, summary);
+
+  factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
 }

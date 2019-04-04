@@ -1,34 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reformation/common/color_sheme.dart';
-import 'package:reformation/data/events.dart';
 import 'package:reformation/model/event.dart';
-
-class TimelinePage extends StatelessWidget {
-  final String title = 'Timeline';
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Palette.blue,
-      ),
-//      drawer: MyDrawer(),
-//    backgroundColor: Palette.lightBlue,
-      body: timeline(),
-    );
-  }
-
-  Widget timeline() {
-    return Container(
-        child: ListView.builder(
-      itemBuilder: (BuildContext context, int index) {
-        return TimelineEvent(events[index]);
-      },
-      itemCount: events.length,
-    ), color: Palette.background,);
-  }
-}
+import 'package:reformation/ui/color_sheme.dart';
 
 class TimelineEvent extends StatelessWidget {
   final Event event;

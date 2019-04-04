@@ -23,6 +23,6 @@ class Palette {
     "People": purple,
     "Places": mildGreen,
     "Timeline": burgundy,
-    "Sources":orange
+    "Sources": orange
   };
 }

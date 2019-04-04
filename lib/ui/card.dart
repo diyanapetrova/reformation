@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:reformation/common/color_sheme.dart';
-import 'package:reformation/common/text_style.dart';
+import 'package:reformation/ui/color_sheme.dart';
+import 'package:reformation/ui/text_style.dart';
 import 'package:reformation/model/person.dart';
+import 'package:reformation/model/place.dart';
 import 'package:reformation/model/resource.dart';
 import 'package:reformation/model/source.dart';
-import 'package:reformation/ui/details_page.dart';
+import 'package:reformation/pages//details_page.dart';
 
 class ResourceSummary extends StatelessWidget {
   final Resource resource;
@@ -70,7 +71,9 @@ class ResourceSummary extends StatelessWidget {
           ? EdgeInsets.only(left: 46.0)
           : horizontal && !(resource is Person)
               ? EdgeInsets.all(0)
-              : EdgeInsets.only(top: 72.0),
+              : resource is Place
+                  ? EdgeInsets.only(top: 240)
+                  : EdgeInsets.only(top: 72.0),
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.rectangle,

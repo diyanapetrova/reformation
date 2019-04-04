@@ -6,11 +6,11 @@ import 'package:reformation/model/person.dart';
 import 'package:reformation/model/place.dart';
 import 'package:reformation/model/resource.dart';
 import 'package:reformation/model/source.dart';
-import 'package:reformation/ui/home_page.dart';
-import 'package:reformation/ui/people_page.dart';
-import 'package:reformation/ui/places_page.dart';
-import 'package:reformation/ui/sources_page.dart';
-import 'package:reformation/ui/timeline_page.dart';
+import 'package:reformation/pages/home_page.dart';
+import 'package:reformation/pages/people_page.dart';
+import 'package:reformation/pages/places_page.dart';
+import 'package:reformation/pages/sources_page.dart';
+import 'package:reformation/pages/timeline_page.dart';
 
 void main() => runApp(MyApp());
 

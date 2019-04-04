@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:reformation/common/card.dart';
-import 'package:reformation/common/color_sheme.dart';
-import 'package:reformation/common/things.dart';
+import 'package:reformation/ui/card.dart';
+import 'package:reformation/ui/color_sheme.dart';
+import 'package:reformation/ui/common.dart';
 import 'package:reformation/model/person.dart';
 import 'package:reformation/model/place.dart';
 import 'package:reformation/model/resource.dart';
@@ -22,11 +22,11 @@ class DetailsPage extends StatelessWidget {
     else if (resource is Source) content = _sourceDetails(resource, context);
 
     return Scaffold(
-        backgroundColor: Palette.background,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Stack(
             children: <Widget>[
-              _background(),
+              resource is Place ? _placeBackground(resource) : _background(),
               _backButton(context),
               ResourceSummary(
                 resource,
@@ -36,8 +36,11 @@ class DetailsPage extends StatelessWidget {
                 child: Column(
                   children: content,
                 ),
-                padding:
-                    EdgeInsets.only(left: 24, right: 24, top: 260, bottom: 24),
+                padding: EdgeInsets.only(
+                    left: 24,
+                    right: 24,
+                    top: resource is Place ? 425 : 260,
+                    bottom: 24),
               )
             ],
           ),
@@ -56,10 +59,34 @@ class DetailsPage extends StatelessWidget {
         height: 300,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Palette.blue, Palette.background],
+              colors: [Palette.blue, Colors.white],
               begin: FractionalOffset.topCenter,
               end: FractionalOffset.bottomCenter),
         ));
+  }
+
+  Widget _placeBackground(Place place) {
+    return Stack(
+      children: <Widget>[
+        Container(
+          child: new Image.asset(
+            place.image,
+            fit: BoxFit.cover,
+            height: 300.0,
+          ),
+          constraints: new BoxConstraints.expand(height: 300.0),
+        ),
+        Container(
+            margin: EdgeInsets.only(top: 200),
+            height: 100,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Color(0x00000000), Colors.white],
+                  begin: FractionalOffset.topCenter,
+                  end: FractionalOffset.bottomCenter),
+            ))
+      ],
+    );
   }
 
   List<Widget> _personContent(Person person, BuildContext context) {

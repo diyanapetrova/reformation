@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reformation/common/card.dart';
-import 'package:reformation/common/color_sheme.dart';
+import 'package:reformation/ui/card.dart';
+import 'package:reformation/ui/color_sheme.dart';
 import 'package:reformation/main.dart';
 
 class SourcesPage extends StatelessWidget {

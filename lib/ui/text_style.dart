@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:reformation/common/color_sheme.dart';
+import 'package:reformation/ui/color_sheme.dart';
 
 class Style {
   static final baseTextStyle = TextStyle(fontFamily: 'PT Sans', fontSize: 10);
@@ -22,6 +22,6 @@ class Style {
   static final subHeaderTextStyle =
       headerTextStyle.copyWith(fontSize: 16, fontWeight: FontWeight.normal);
 
-  static final caption =
-  headerTextStyle.copyWith(fontSize: 10, fontWeight: FontWeight.normal, fontStyle: FontStyle.italic);
+  static final caption = headerTextStyle.copyWith(
+      fontSize: 10, fontWeight: FontWeight.normal, fontStyle: FontStyle.italic);
 }

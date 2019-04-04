@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:reformation/data/people.dart';
-import 'package:reformation/data/places.dart';
+import 'package:reformation/main.dart';
 import 'package:reformation/model/resource.dart';
-import 'package:reformation/ui/details_page.dart';
+import 'package:reformation/pages/details_page.dart';
 
 class SearchBar extends StatelessWidget implements PreferredSizeWidget {
   final String _appBarTitle;
@@ -24,20 +23,11 @@ class SearchBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: _searchIcon,
           onPressed: () {
-            showSearch(context: context, delegate: AppSearch(getContent()));
+            showSearch(context: context, delegate: AppSearch(content));
           },
         )
       ],
     );
-  }
-
-  Map<String, Resource> getContent() {
-    Map<String, Resource> content = new Map();
-    people.forEach((person) => content[person.name] = person);
-    places.forEach((place) => content[place.name] = place);
-
-    content.forEach((name, res) => print(name));
-    return content;
   }
 }
 
