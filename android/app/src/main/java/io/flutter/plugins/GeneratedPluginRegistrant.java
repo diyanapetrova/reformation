@@ -1,7 +1,8 @@
 package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
-import io.flutter.plugins.googlemaps.GoogleMapsPlugin;
+import io.flutter.plugins.pathprovider.PathProviderPlugin;
+import io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -11,7 +12,8 @@ public final class GeneratedPluginRegistrant {
     if (alreadyRegisteredWith(registry)) {
       return;
     }
-    GoogleMapsPlugin.registerWith(registry.registrarFor("io.flutter.plugins.googlemaps.GoogleMapsPlugin"));
+    PathProviderPlugin.registerWith(registry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
+    SharedPreferencesPlugin.registerWith(registry.registrarFor("io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {
