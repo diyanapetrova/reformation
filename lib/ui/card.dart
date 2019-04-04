@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:reformation/ui/color_sheme.dart';
-import 'package:reformation/ui/text_style.dart';
 import 'package:reformation/model/person.dart';
 import 'package:reformation/model/place.dart';
 import 'package:reformation/model/resource.dart';
 import 'package:reformation/model/source.dart';
 import 'package:reformation/pages//details_page.dart';
+import 'package:reformation/ui/color_sheme.dart';
+import 'package:reformation/ui/text_style.dart';
+import 'package:reformation/ui/transition.dart';
 
 class ResourceSummary extends StatelessWidget {
   final Resource resource;
@@ -19,10 +20,11 @@ class ResourceSummary extends StatelessWidget {
         onTap: horizontal
             ? () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DetailsPage(resource)),
-                );
+                    context, SlideRightRoute(widget: DetailsPage(resource))
+//                  MaterialPageRoute(
+//                      builder: (context) => DetailsPage(resource)),
+//                );
+                    );
               }
             : null,
         child: Container(

@@ -109,6 +109,8 @@ class AppSearch extends SearchDelegate {
         .where((entry) => entry.toLowerCase().contains(query.toLowerCase()))
         .toList();
 
+    if(filtered.isEmpty)
+
     return ListView.builder(
         itemCount: filtered.length,
         itemBuilder: (context, index) {

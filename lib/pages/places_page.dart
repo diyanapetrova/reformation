@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
-import 'package:reformation/ui/color_sheme.dart';
 import 'package:reformation/main.dart';
 import 'package:reformation/pages/details_page.dart';
+import 'package:reformation/ui/color_sheme.dart';
+import 'package:reformation/ui/transition.dart';
 
 class PlacesPage extends StatelessWidget {
   final String title = 'Places';
@@ -57,9 +58,8 @@ class PlacesPage extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => DetailsPage(place)),
-                  );
+                      context, SlideRightRoute(widget: DetailsPage(place)));
+
 //                  Navigator.of(context).push(DetailsPage(place));
                 })))
         .toList();
