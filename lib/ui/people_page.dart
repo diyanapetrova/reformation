@@ -11,12 +11,12 @@ class PeoplePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(title),
-          backgroundColor: Palette.purple,
+          backgroundColor: Palette.blue,
         ),
         body: SingleChildScrollView(
           child: Column(
               children:
-                  people.map((person) => PersonSummary(person, true)).toList()),
-        ));
+                  people.map((person) => ResourceSummary(person, true)).toList()),
+        ), backgroundColor: Palette.background,);
   }
 }

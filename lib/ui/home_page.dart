@@ -21,19 +21,13 @@ class HomeGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     List<String> tiles = List.from(pages);
     tiles.remove('Home');
-    var colors = {
-      "People": Palette.purple,
-      "Places": Palette.mildGreen,
-      "Timeline": Palette.burgundy,
-      "Sources": Palette.orange
-    };
 
     return Container(
         margin: EdgeInsets.all(10),
         child: GridView.count(
             crossAxisCount: 2,
             children: tiles
-                .map((item) => buildTile(item, context, colors[item]))
+                .map((item) => buildTile(item, context, Palette.categoryColors[item]))
                 .toList()));
   }
 
@@ -60,7 +54,7 @@ class HomeGrid extends StatelessWidget {
                 child: Text(title,
                     style: Theme.of(context)
                         .textTheme
-                        .title
+                        .headline
                         .apply(color: Colors.white)))));
   }
 }

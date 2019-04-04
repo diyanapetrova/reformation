@@ -11,7 +11,7 @@ class TimelinePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Palette.burgundy,
+        backgroundColor: Palette.blue,
       ),
 //      drawer: MyDrawer(),
 //    backgroundColor: Palette.lightBlue,
@@ -20,12 +20,13 @@ class TimelinePage extends StatelessWidget {
   }
 
   Widget timeline() {
-    return ListView.builder(
+    return Container(
+        child: ListView.builder(
       itemBuilder: (BuildContext context, int index) {
         return TimelineEvent(events[index]);
       },
       itemCount: events.length,
-    );
+    ), color: Palette.background,);
   }
 }
 
@@ -37,7 +38,8 @@ class TimelineEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-        children: <Widget>[_box(context), _line(), _icon(), _date(context)]);
+      children: <Widget>[_box(context), _line(), _icon(), _date(context)],
+    );
   }
 
   Widget _date(BuildContext context) {
@@ -45,7 +47,7 @@ class TimelineEvent extends StatelessWidget {
         top: 30.0,
         left: 15.0,
         child: Container(
-          color: Colors.white,
+          color: Palette.background,
           child: Text(
             event.date,
             style: Theme.of(context).textTheme.body1,
@@ -74,15 +76,15 @@ class TimelineEvent extends StatelessWidget {
         height: 40.0,
         width: 40.0,
         decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white,
+          shape: BoxShape.rectangle,
+          color: Palette.background,
         ),
         child: Container(
           margin: EdgeInsets.all(5.0),
           height: 25.0,
           width: 25.0,
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
+            shape: BoxShape.rectangle,
             image: DecorationImage(
                 fit: BoxFit.cover, image: AssetImage(event.icon)),
           ),
@@ -96,7 +98,7 @@ class TimelineEvent extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(95, 10, 10, 10),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color(0xFFe285a2),
+        color: Colors.white,
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[

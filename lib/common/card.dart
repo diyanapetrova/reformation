@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/common/text_style.dart';
 import 'package:reformation/model/person.dart';
+import 'package:reformation/model/resource.dart';
+import 'package:reformation/model/source.dart';
 import 'package:reformation/ui/details_page.dart';
 
-class PersonSummary extends StatelessWidget {
-  final Person person;
+class ResourceSummary extends StatelessWidget {
+  final Resource resource;
   final bool horizontal;
 
-  PersonSummary(this.person, this.horizontal);
+  ResourceSummary(this.resource, this.horizontal);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,8 @@ class PersonSummary extends StatelessWidget {
             ? () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DetailsPage(person)),
+                  MaterialPageRoute(
+                      builder: (context) => DetailsPage(resource)),
                 );
               }
             : null,
@@ -27,15 +30,19 @@ class PersonSummary extends StatelessWidget {
             horizontal: 24.0,
           ),
           child: Stack(
-            children: <Widget>[
-              _card(),
-              _image(),
-            ],
+            children: stack(context),
           ),
         ));
   }
 
-  Widget _image() {
+  List<Widget> stack(BuildContext context) {
+    List<Widget> stack = List();
+    stack.add(_card(context));
+    if (resource is Person) stack.add(_image(resource));
+    return stack;
+  }
+
+  Widget _image(Person person) {
     return Container(
       margin: horizontal
           ? EdgeInsets.symmetric(vertical: 16.0)
@@ -43,7 +50,7 @@ class PersonSummary extends StatelessWidget {
       alignment:
           horizontal ? FractionalOffset.centerLeft : FractionalOffset.center,
       decoration: BoxDecoration(
-          color: Palette.purple,
+          color: Palette.blue,
           shape: BoxShape.circle,
           image: DecorationImage(
             fit: BoxFit.cover,
@@ -54,14 +61,18 @@ class PersonSummary extends StatelessWidget {
     );
   }
 
-  Widget _card() {
+  Widget _card(BuildContext context) {
     return Container(
-      height: horizontal ? 124.0 : 154.0,
-      margin: horizontal
-          ? new EdgeInsets.only(left: 46.0)
-          : new EdgeInsets.only(top: 72.0),
+      height: (!horizontal && (resource is Person)) || resource is Source
+          ? 156.0
+          : 124.0,
+      margin: horizontal && resource is Person
+          ? EdgeInsets.only(left: 46.0)
+          : horizontal && !(resource is Person)
+              ? EdgeInsets.all(0)
+              : EdgeInsets.only(top: 72.0),
       decoration: BoxDecoration(
-        color: Color(0xFFbda1cc),
+        color: Colors.white,
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[
@@ -72,27 +83,39 @@ class PersonSummary extends StatelessWidget {
           ),
         ],
       ),
-      child: cardContent(),
+      child: cardContent(context),
     );
   }
 
-  Widget cardContent() {
+  Widget cardContent(BuildContext context) {
     return Container(
-//        margin: EdgeInsets.fromLTRB(76.0, 16.0, 16.0, 16.0),
-        margin: new EdgeInsets.fromLTRB(
-            horizontal ? 76.0 : 16.0, horizontal ? 16.0 : 42.0, 16.0, 16.0),
+        margin: EdgeInsets.fromLTRB(
+            horizontal && resource is Person ? 76.0 : 16.0,
+            !horizontal && resource is Person ? 42.0 : 16.0,
+            16.0,
+            16.0),
         constraints: BoxConstraints.expand(),
         child: Column(
-          crossAxisAlignment:
-              horizontal ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+          crossAxisAlignment: horizontal && resource is Person
+              ? CrossAxisAlignment.start
+              : CrossAxisAlignment.center,
           children: <Widget>[
             Container(height: 4.0),
             Text(
-              person.name,
+              resource.name,
               style: Style.headerTextStyle,
+              textAlign: horizontal && resource is Person
+                  ? TextAlign.start
+                  : TextAlign.center,
             ),
-            Container(height: 10.0),
-            Text(person.summary, style: Style.subHeaderTextStyle),
+            Container(height: resource is Source ? 20.0 : 10.0),
+            Text(
+              resource.summary,
+              style: Theme.of(context).textTheme.body1,
+              textAlign: horizontal && resource is Person
+                  ? TextAlign.start
+                  : TextAlign.center,
+            ),
           ],
         ));
   }

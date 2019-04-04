@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'PT Sans',
         textTheme: TextTheme(
-          title: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+          title: TextStyle(fontSize: 25.0),
           caption: TextStyle(fontSize: 14.0),
           body1: TextStyle(fontSize: 18.0),
         ),
@@ -47,7 +47,6 @@ class MyApp extends StatelessWidget {
 }
 
 void _loadResources(Map<String, Resource> content) {
-
   var peopleRaw = rootBundle.loadString('resources/people.json');
   peopleRaw.then((result) {
     people = _listPeople(result);
@@ -84,3 +83,5 @@ List<Source> _listSources(asset) {
   List<Source> list = data.map((json) => Source.fromJson(json)).toList();
   return list;
 }
+
+//flutter packages pub run build_runner build

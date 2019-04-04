@@ -1,6 +1,7 @@
 [
   {
-    "name": "Keeping Divine Service: An Agreement on Catholic Worship at Holy Trinity Church from May 1527",
+    "name": "Keeping Divine Service",
+    "summary": "An Agreement on Catholic Worship at Holy Trinity Church from May 1527",
     "introduction": "In May 1527 the priests attached to the parish church of Holy Trinity (on South Street) entered into a contract with the St Andrews burgh council. The contract was mainly concerned with church finance, but also set out rules for what services should be celebrated, and the skills expected of priests. This document provides a remarkable insight into Catholic worship in early sixteenth-century St Andrews, and the religious expectations of the local community.",
     "text": [
       "These indentures made at the city of St Andrews... between...James Learmonth of Dairsie, provost of the said city, David Winchester, David Graham, Master Bernard Crawford, and John Trail, bailies of the said city, and council... together with the community of the same on the one part, and Sir Alexander Swinton as procurator of the choir and [the] choristers of the parish kirk of the said city... on the other part...",
@@ -10,10 +11,11 @@
       "And the said Sir Alexander shall take on him the office called Rector Chori for the good rule and service to be done in the foresaid kirk and choir and the song school...",
       "And the foresaid Sir Alexander shall... keep all divine service in choir and kirk as well as any other Rector Chori does in any parish kirk in Scotland, and shall cause the Lady Mass to be sung as well or better than it has been in times bygone..."
     ],
-    "source": ": Adapted from W.E.K. Rankin, The Parish Church of the Holy Trinity, St Andrews (Edinburgh, 1955), pp. 133-135."
+    "source": "Adapted from W.E.K. Rankin, The Parish Church of the Holy Trinity, St Andrews (Edinburgh, 1955), pp. 133-135."
   },
   {
-    "name": "A Place of Execution: John Knox Describes the Death of Patrick Hamilton in 1528",
+    "name": "A Place of Execution",
+    "summary": "John Knox Describes the Death of Patrick Hamilton in 1528",
     "introduction": "Patrick Hamilton was executed outside the gates of St Salvator’s College (also known as the Old College) on 29 February 1528. He was the first person to be killed in Scotland for spreading Protestant ideas. Hamilton served as an inspiration to later generations of Reformers such as John Knox – who included the following narrative in his ‘History of the Reformation in Scotland’. Knox was not himself present at Hamilton’s death, but drew on earlier sixteenth-century descriptions of the execution. Knox’s version of events also has parallels with biblical accounts of Christ’s crucifixion.",
     "text": [
       "Immediately after dinner the fire was prepared before the Old College, and [Patrick Hamilton was] led to the place of execution...",
@@ -25,7 +27,8 @@
     "source": "Adapted from William Croft Dickinson, ed., John Knox’s History of the Reformation in Scotland (New York, 1950), pp. 13-14."
   },
   {
-    "name": "Slain in the Castle of St Andrews: The Death of Cardinal David Beaton in May 1546",
+    "name": "Slain in the Castle of St Andrews",
+    "summary": "The Death of Cardinal David Beaton in May 1546",
     "introduction": "On 29 May 1546 Cardinal David Beaton was murdered in St Andrews Castle by a group of Fife lairds who were sympathetic to religious reform. The assassins were able to get into the Castle because the gates were open to allow builders and other workmen to come and go. Cardinal Beaton’s death sent shock waves around Europe. In the immediate aftermath of the murder James Lyndesay sent the following letter to an unnamed person who was probably working for the English government. ",
     "text": [
       "Sir... this Saturday, betwixt five hours and six in the morning, the Cardinal is slain in the Castle of St Andrews by Norman Leslie in this manner.",
@@ -38,7 +41,8 @@
     "source": "Adapted from National Archives, SP 49/9, f. 1."
   },
   {
-    "name": "Burning Idols: John Knox Describes Events in St Andrews in June 1559",
+    "name": "Burning Idols",
+    "summary": "John Knox Describes Events in St Andrews in June 1559",
     "introduction": "On 23 June 1559 the Protestant leader John Knox wrote to his friend Anna Lock (a religious author who lived in London) updating her on recent events in Scotland.",
     "text": [
       "Ye hunger, I doubt not, dear sister, to know... the things that have come to pass since my arrival, and my expectation in this enterprise...",
@@ -58,7 +62,8 @@
     "source": "Adapted from D. Laing, ed., The Works of John Knox  (Edinburgh, 1895), vol. 6, pp. 21-26."
   },
   {
-    "name": "Spoiling Goodly Things: Lord Herries Remembers the Upheavals of June 1559",
+    "name": "Spoiling Goodly Things",
+    "summary": "Lord Herries Remembers the Upheavals of June 1559",
     "introduction": "In the 1570s the Scottish nobleman Lord Herries wrote about his memories of the reign of Mary Queen of Scots. Although Herries was a Protestant, he was sympathetic to Mary and was critical of people such as John Knox and Lord James Stewart who helped depose her in 1567. Herries’ suspicion of Knox and Lord James can be detected in his description of Protestant activity in Fife in June 1559.",
     "text": [
       "When the news was known that Lord James and the Earl of Argyll had deserted... and joined themselves to the Congregation, the people were so much encouraged that they flocked in multitudes.",
@@ -68,7 +73,8 @@
     "source": "Adapted from R. Pitcairn, ed., Historical Memoirs of the Reign of Mary Queen of Scots, and a Portion of the Reign of James the Sixth, by Lord Herries (Edinburgh, 1836), p. 40."
   },
   {
-    "name": "Rejecting Tradition: Friar John Grierson Publicly Renounces Catholicism, March 1560",
+    "name": "Rejecting Tradition",
+    "summary": "Friar John Grierson Publicly Renounces Catholicism, March 1560",
     "introduction": "Following St Andrews’ official adoption of Protestantism in the summer of 1559 local residents were pressured to join the Reformed Kirk. Catholics who refused to accept the religious changes were prosecuted by the Kirk Session (which enforced Protestant moral values within the St Andrews community). In March 1560 Friar John Grierson, the former head of the Dominican Order in Scotland, publicly renounced Catholicism in front of the congregation at Holy Trinity Church. Grierson’s recantation was recorded in the St Andrews Kirk Session minutes.",
     "text": [
       "Here, in presence of almighty...God and of this holy congregation, I grant and confess that in times bypast I have maintained and defended diverse kinds of superstition and idolatry... and repent the same from the bottom of my heart, and [am] content in time to come to institute and conform my life to the word and doctrine of the eternal God set forth... in the Old Testament and the New... and therefore I reject, renounce and abhor all other doctrines and traditions of men...",

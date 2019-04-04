@@ -11,7 +11,8 @@ Source _$SourceFromJson(Map<String, dynamic> json) {
       json['name'],
       json['introduction'] as String,
       json['source'] as String,
-      (json['text'] as List).map((e) => e as String).toList());
+      (json['text'] as List).map((e) => e as String).toList(),
+      json['summary'] as String);
 }
 
 Map<String, dynamic> _$SourceToJson(Source instance) => <String, dynamic>{

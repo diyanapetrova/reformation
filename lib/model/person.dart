@@ -7,10 +7,9 @@ part 'person.g.dart';
 class Person extends Resource {
   final String image;
   final List<String> text;
-  final String summary;
   final List<String> references;
 
-  Person(name, this.text, this.summary, this.references, {this.image = "images/people/no_photo.png"}) : super(name);
+  Person(name, this.text,summary, this.references, {this.image = "images/people/no_photo.png"}) : super(name, summary);
   factory Person.fromJson(Map<String, dynamic> json) =>
       _$PersonFromJson(json);
 }

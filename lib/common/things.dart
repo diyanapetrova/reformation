@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reformation/common/color_sheme.dart';
 import 'package:reformation/main.dart';
 import 'package:reformation/ui/details_page.dart';
 
@@ -12,11 +13,9 @@ class Common {
           paragraph,
           style: Theme.of(context).textTheme.body1,
         ),
-        padding: EdgeInsets.all(15),
       ));
       list.add(Divider(
-        color: Colors.white,
-        height: 3,
+        color: Palette.background,
       ));
     });
     return list;
@@ -24,15 +23,20 @@ class Common {
 
   static Widget references(List<String> references, BuildContext context) {
     return Wrap(
-        spacing: 6.0, // gap between adjacent chips
+        spacing: 4.0, // gap between adjacent chips
         runSpacing: 4.0, // gap between lines
         children: references
             .map((ref) => GestureDetector(
                 child: Chip(
-                    label: Text(
-                  ref,
-                  style: Theme.of(context).textTheme.body1,
-                )),
+                  label: Text(
+                    ref,
+                    style: Theme.of(context)
+                        .textTheme
+                        .body1
+                        .apply(color: Colors.white),
+                  ),
+                  backgroundColor: Palette.blue,
+                ),
                 onTap: () {
                   Navigator.push(
                       context,

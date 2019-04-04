@@ -16,4 +16,13 @@ class Palette {
   static final green = Color(0xFF54b948);
   static final mildGreen = Color(0xFF00853f);
   static final darkGreen = Color(0xFF005953);
+
+  static final background = Color(0xFFe6e6e6);
+
+  static final categoryColors = {
+    "People": purple,
+    "Places": mildGreen,
+    "Timeline": burgundy,
+    "Sources":orange
+  };
 }

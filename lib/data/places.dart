@@ -8,5 +8,5 @@ const text = [
 
 List<Place> places = [
   const Place("Castle", 56.342248, -2.790009, 'images/places/castle.jpg',
-      'images/icons/place.png', text, []),
+      'images/icons/place.png', text, [], ""),
 ];
