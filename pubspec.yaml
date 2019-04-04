@@ -39,27 +39,28 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-#
-#   To add assets to your application, add an assets section, like this:
+  #
+  #   To add assets to your application, add an assets section, like this:
   assets:
-    - images/icons/administration.png
-    - images/icons/archbishop.png
-    - images/icons/death.png
-    - images/icons/education.png
-    - images/icons/preaching.png
-    - images/icons/publication.png
-    - images/icons/royal.png
-    - images/icons/war.png
-    - images/icons/place.png
-    - images/places/castle.jpg
-    - images/places/cathedral.jpg
-    - images/places/deans_cort.jpg
-    - images/places/holy_trinity.jpg
-    - images/people/john_knox.jpg
-    - resources/people.json
-    - resources/places.json
-    - resources/sources.json
-    - images/people/no_photo.png
+  - images/icons/administration.png
+  - images/icons/archbishop.png
+  - images/icons/death.png
+  - images/icons/education.png
+  - images/icons/preaching.png
+  - images/icons/publication.png
+  - images/icons/royal.png
+  - images/icons/war.png
+  - images/icons/place.png
+  - images/places/castle.jpg
+  - images/places/cathedral.jpg
+  - images/places/deans_cort.jpg
+  - images/places/holy_trinity.jpg
+  - images/people/john_knox.jpg
+  - resources/people.json
+  - resources/places.json
+  - resources/sources.json
+  - images/people/no_photo.png
+  - images/home.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

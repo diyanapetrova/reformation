@@ -7,7 +7,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(appBar: SearchBar(title), body: HomeGrid());
+    return new Scaffold(
+      appBar: SearchBar(title),
+      body: Container(
+        child: HomeGrid(),
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new AssetImage("images/home.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
   }
 }
 
